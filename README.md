@@ -23,7 +23,7 @@ Modification du main.tf principal du déploiement terraform.
 ## Configuration du main.tf du module apim
 ```markdown
 Voici un exemple de configuration terraform pour le fichier main.tf du module apim :
-
+```
 ```hcl
 resource "azurerm_api_management" "example" {
   name                = var.name
@@ -34,13 +34,13 @@ resource "azurerm_api_management" "example" {
 
   sku_name = var.sku_name
 }
-
+```
 
 ## Configuration du output.tf du module apim
 
 ```markdown
 Voici un exemple de configuration terraform pour le fichier variable.tf du module apim :
-
+```
 ```hcl
 variable "resourceGroupName" {
   description = "The name of the resource group"
@@ -80,10 +80,12 @@ variable "sku_name" {
   type        = string
   default     = "Developer_1"
 }
+```
 
 # Configuration du output.tf du module apim
 ```markdown
 Voici un exemple de configuration terraform pour le fichier output.tf du module apim :
+```
 ```hcl
 output "apim_id" {
   value = azurerm_api_management.example.id
@@ -107,4 +109,4 @@ module "apim" {
    module.resource_group,
    ]
 }
-
+```
