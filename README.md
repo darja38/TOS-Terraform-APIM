@@ -35,6 +35,7 @@ resource "azurerm_api_management" "example" {
   sku_name = var.sku_name
 }
 ```
+Ce fichier appelle toutes les valeurs stockées dans le fichier variables.tf que nous allons voir ci-dessous. 
 
 ## Configuration du variables.tf du module apim
 
@@ -82,6 +83,8 @@ variable "sku_name" {
 }
 ```
 
+Veuillez faire attention à bien utiliser dans la variable "sku_name" la valeur "Developer_1" afin d'avoir une instance gratuite de l'APIM. 
+
 # Configuration du output.tf du module apim
 ```markdown
 Voici un exemple de configuration terraform pour le fichier output.tf du module apim :
@@ -95,6 +98,9 @@ output "apim_gateway_url" {
   value = azurerm_api_management.example.gateway_url
 }
 ```
+
+Dans ce fichier j'ai exposer certaines variables afin de pouvoir les utiliser dans d'autres modules. 
+
 # Configuration du main.tf principal pour appeler le module apim 
 ```markdown
 Voici un exemple de configuration terraform pour le fichier main.tf principal afin d'appeler le module précédement crée:
@@ -111,3 +117,5 @@ module "apim" {
    ]
 }
 ```
+
+Enfin, dans ce fichier, comme vous pouvez le voir, je récupère un resource_group déjà créé afin d'y instancier la ressource APIM. Un depends_on est également créé pour éviter de lancer la création de la ressource tant que le resource_group n'est pas créé.
