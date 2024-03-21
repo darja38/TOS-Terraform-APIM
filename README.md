@@ -36,7 +36,7 @@ resource "azurerm_api_management" "example" {
 }
 ```
 
-## Configuration du output.tf du module apim
+## Configuration du variables.tf du module apim
 
 ```markdown
 Voici un exemple de configuration terraform pour le fichier variable.tf du module apim :
