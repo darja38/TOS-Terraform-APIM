@@ -12,10 +12,11 @@ Configurer l'APIM selon les spécifications techniques préétablies.
 Fournir des instructions claires sur la personnalisation du module en fonction des besoins spécifiques du projet.
 
 ## Fichiers nécessaire à son déploiement 
-moduleapim
-  main.tf
-  output.tf
-  variable.tf
+Le déploiement nécessite la présence des fichiers suivants au sein du module moduleapim :
+
+main.tf : Contient la configuration principale du module.
+output.tf : Définit les sorties du module.
+variable.tf : Liste toutes les variables utilisées par le module.
 
 Modification du main.tf principal du déploiement terraform. 
 
@@ -33,7 +34,7 @@ resource "azurerm_api_management" "example" {
 
   sku_name = var.sku_name
 }
-```
+
 
 ## Configuration du output.tf du module apim
 
@@ -79,7 +80,6 @@ variable "sku_name" {
   type        = string
   default     = "Developer_1"
 }
-```
 
 # Configuration du output.tf du module apim
 ```markdown
@@ -92,7 +92,6 @@ output "apim_id" {
 output "apim_gateway_url" {
   value = azurerm_api_management.example.gateway_url
 }
-```
 
 # Configuration du main.tf principal pour appeler le module apim 
 ```markdown
@@ -108,4 +107,4 @@ module "apim" {
    module.resource_group,
    ]
 }
-```
+
