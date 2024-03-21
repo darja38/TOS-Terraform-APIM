@@ -10,7 +10,7 @@ variable "resourceGroupLocation" {
 variable "name" {
   description = "The name of the API Management service."
   type        = string
-  default     = "apimpreprodg1"
+  default     = "testapim1"
 }
 
 variable "location" {
@@ -28,7 +28,7 @@ variable "publisher_name" {
 variable "publisher_email" {
   description = "The email of the publisher."
   type        = string
-  default     = "jason.lestage@diiage.org"
+  default     = "mail@test.com"
 }
 
 variable "sku_name" {
