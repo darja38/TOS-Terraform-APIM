@@ -94,10 +94,11 @@ output "apim_id" {
 output "apim_gateway_url" {
   value = azurerm_api_management.example.gateway_url
 }
-
+```
 # Configuration du main.tf principal pour appeler le module apim 
 ```markdown
 Voici un exemple de configuration terraform pour le fichier main.tf principal :
+```
 ```hcl
 module "apim" {
    source = "./modules/apim"
