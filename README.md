@@ -97,7 +97,7 @@ output "apim_gateway_url" {
 ```
 # Configuration du main.tf principal pour appeler le module apim 
 ```markdown
-Voici un exemple de configuration terraform pour le fichier main.tf principal :
+Voici un exemple de configuration terraform pour le fichier main.tf principal afin d'appeler le module précédement crée:
 ```
 ```hcl
 module "apim" {
